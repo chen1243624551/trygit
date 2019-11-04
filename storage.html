@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" id="username"> <br>
+    <button id="set">设置数据</button>
+    <button id="get">获取数据</button>
+    <button id="del">删除数据</button>
+  </body>
+  <script type="text/javascript">
+  var username = document.getElementById("username")
+  var set = document.getElementById("set");
+  var get = document.getElementById("get");
+  var del = document.getElementById("del");
+
+  set.onclick = function(){
+    var val = username.value;
+    window.localStorage.setItem('username', val)
+  }
+  get.onclick = function(){
+    var username = window.localStorage.getItem('username')
+    console.log(username);
+  }
+  del.onclick = function(){
+    window.localStorage.removeItem('username')
+  }
+  </script>
+</html>
